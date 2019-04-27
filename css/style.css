@@ -1,0 +1,357 @@
+/*
+
+Theme Name: Robot chat
+
+Author: Patrick Lomp
+
+Author URI: https://patricklomp.ee
+
+Description:  Theme for GotoAndPlay assignement
+
+Version: 1.0
+
+*/
+html{
+  font-family: 'Roboto', sans-serif;
+}
+
+input,button {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.main{
+  min-height: 100vh;
+  background: url(../imgs/bg.png);
+  border-radius: 0;
+}
+.chat-window{
+  padding: 0;
+  height: 60vh;
+  background-color: white;
+}
+
+.header{
+  width: 100%;
+  height: 6vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(2555,255,255,1);
+}
+.text-box{
+   height: 48vh;
+}
+.footer{
+  width: 100%;
+  height: 6vh;
+  background-color: rgba(2555,255,255,1);
+  border-top: solid;
+  border-width: 2px;
+  border-color: rgba(98,226,192,1);
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile-pic{
+  background: url(../imgs/pic.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+
+  width: 5vh;
+  height: 5vh;
+  border-radius: 2.5vh;
+  border: solid;
+  border-width: 2px;
+  border-color: rgba(98,226,192,1);
+}
+
+
+
+
+
+/*Chat box*/
+.usertextbox{
+ min-height: 4vh;
+ padding-left: 2vw;
+ padding-right: 2vw;
+}
+.usertext{
+  float: right;
+  background-color: rgba(231,233,255,1);
+  max-width: 70%;
+  padding: 3vh;
+}
+.robottext{
+  float: left;
+  max-width: 70%;
+  background-color: rgb(221,253,232,1);
+}
+
+
+
+
+.userinfo{
+  padding-right: 1rem;
+  float: right;
+  width: 100%;
+  text-align: right;
+}
+
+.robotinfo{
+  padding-left: 1rem;
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+.chat-pic{
+  height,width: 2rem;
+  background: url(../imgs/pic.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+  border-radius: 1rem;
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(98,226,192,1);
+}
+
+
+
+
+
+
+
+
+/*footer*/
+#search-input{
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+}
+
+.send-pic{
+  width: 2vh;
+  height: 2vh;
+}
+
+
+.rectangle{
+  float: right;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-left:10px solid rgba(231,233,255,1);
+}
+.rectangle-robot{
+  float: left;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-right:10px solid rgb(221,253,232,1);
+}
+
+
+
+
+
+/*Robot loading*/
+/*https://loading.io/css/*/
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(113, 128, 147,0.6);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Texts*/
+.user-name{
+  opacity: 0.85;
+  color: rgba(231,233,255,1);
+}
+.robot-name{
+  opacity: 0.96;
+  color: rgba(98,226,192,1);
+}
+.header p{
+  padding: 1rem;
+  font-size: 1.4rem;
+  float: left;
+}
+.messagename{
+  font-size: 1.2em;
+
+}
+.messagetime{
+  opacity: 0.54;
+  font-size: 1em;
+}
+p{
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  color: rgba(	71, 82, 119,1);
+}
+
+
+
+
+
+
+
+
+
+
+/*Media*/
+@media only screen and (max-width: 992px) {
+
+
+
+  .header{
+    height: 10vh;
+  }
+  .footer{
+    height: 10vh;
+  }
+  .text-box{
+    min-height: 80vh;
+  }
+
+
+
+
+
+
+  .main{
+    padding: 0;
+  }
+  .chat-window{
+    margin: 0;
+    min-width: 100%;
+    min-height: 100vh;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /*Texts*/
+  p{
+    font-size: 3em;
+  }
+  .header p{
+    padding: 2rem;
+    font-size: 3rem;
+  }
+  .messagename{
+    font-size: 2.0em;
+
+  }
+  .messagetime{
+    font-size: 1.8em;
+  }
+
+  .profile-pic{
+    width: 8vh;
+    height: 8vh;
+
+    border-radius: 4vh;
+    border-width: 8px;
+  }
+  #search-input{
+    font-size: 3rem;
+  }
+}
