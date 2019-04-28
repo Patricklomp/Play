@@ -1,10 +1,10 @@
-#Welcome to my chat-bot!
+# Welcome to my chat-bot!
 
 Test chat-bot in Estonian for gotoAndPlay assignement
 Made with Bootstrap,CSS,JS and jQuery.
 
 
-##Sample communication with the robot
+## Sample communication with the robot
 
 |Input   | Output|
 | ------------- | ------------- |
