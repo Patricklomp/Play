@@ -1,6 +1,6 @@
 # Welcome to my chat-bot!
 
-Test chat-bot in Estonian for gotoAndPlay assignement
+Test chat-bot in Estonian for gotoAndPlay assignment
 Made with Bootstrap,CSS,JS and jQuery.
 
 
