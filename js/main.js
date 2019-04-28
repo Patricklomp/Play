@@ -170,6 +170,8 @@ function addRobotLoading(){
 function robotAnalize(value){
   value = value.toLowerCase();
 
+
+///Give answer by testing string with different regex patterns.
   switch(true) {
     case /tere|tervist|hei|hey|tsau/.test(value):
       return "Hei!";
@@ -184,11 +186,10 @@ function robotAnalize(value){
       return "Vastus: "+ eval(value);
       break;
     case /eur.*usd|usd.*eur/.test(value):
-      if(/eur.*usd/){
+      if(/eur.*usd/.test(value)){
       return convertFiat(value, true);
     }else {
-      console.log("siin");
-      convertFiat(value, false);
+      return convertFiat(value, false);
     }
       break;
       case /kell/.test(value):
@@ -199,19 +200,26 @@ function robotAnalize(value){
     default:
       return "Kuidas läheb";
   }
+}
 
 
 function convertFiat(value, convertTo){
 //Converts EUR to USD and USD to EUR
 //Rates from ECB https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml using https://exchangeratesapi.io/
+
 var rate = 0;
 var convert = value.match(/\d/g);
+
+//See if amount is specified if not return
 try{
 convert = convert.join("");
 }catch{
   return "unustasite väärtuse sisestada, proovige uuesti";
 }
+
+
 var result = 0;
+
 var convertIt = jQuery.when(
      jQuery.getJSON('https://api.exchangeratesapi.io/latest')
  ).done( function(json) {
@@ -224,6 +232,9 @@ var convertIt = jQuery.when(
     }else {
       result = convert/rate;
     }
+
+    ///Round converted value
+    result = Math.round(result);
 
     setTimeout(function(){
       addRobotItemToDOM("Konverteeritud valuuta väärtus: "+ result);
@@ -243,25 +254,52 @@ return "Üks hetk";
 
 
 function getIlm(value){
-  ///http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         // Typical action to be performed when the document is ready:
-         document.getElementById("demo").innerHTML = xhttp.responseText;
-      }
-  };
+  ///using openweathermap API
+  ///https://api.openweathermap.org/data/2.5/weather?q="+linn+"&APPID=24d4f6066c53536dbc30a1ac1b14c63c
+value = value.replace("ilm","");
+ value = value.split(" ");
+ var answer = "";
 
-  $.ajax({
-    type: "GET",
-    url: "http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php",
-    dataType:"text",
-    success: function(xml) {
-        console.log("success");
-        }
-    }
-);
+
+ for (var i = 0; i < value.length; i++) {
+   if(value[i].length>3){
+   linn = value[i];
+  }
 }
+
+
+try{
+  ilmData(linn,function(data){
+
+    setTimeout(function(){
+      var str = "Ilma tüüp: "+data[0] +". Õues on "+ data[1]+" kraadi "+"ning puhub tuul kiirusega "+ data[2] +"m/s."
+      addRobotItemToDOM(str);
+
+  }, 1200);
+
+    });
+
+}catch{
+  return "linn ei sobinud";
+}
+
+return "Ilma info: ";
+
+}
+
+///Callback function
+function ilmData(linn,callback){
+  console.log("siin");
+  var temporary = jQuery.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+linn+"&APPID=24d4f6066c53536dbc30a1ac1b14c63c").done(function (data) {
+      //execute the callback, passing it the data
+      var ilm = data["weather"][0]["description"];
+      //get temp
+      var temp = Math.round((data["main"]['temp']-273.15)*100)/100;
+      var wind = data["wind"]["speed"];
+      var result = [ilm,temp,wind];
+      console.log(result);
+      callback(result);
+  });
 
 
 

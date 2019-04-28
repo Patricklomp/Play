@@ -11,6 +11,10 @@ Description:  Theme for GotoAndPlay assignement
 Version: 1.0
 
 */
+
+
+
+
 html{
   font-family: 'Roboto', sans-serif;
 }
@@ -24,6 +28,10 @@ input,button {
     box-shadow: none;
 }
 
+
+
+
+/*Main div styling*/
 .main{
   min-height: 100vh;
   background: url(../imgs/bg.png);
@@ -42,7 +50,9 @@ input,button {
   background-color: rgba(2555,255,255,1);
 }
 .text-box{
+  width: 100%;
    height: 48vh;
+   overflow-y: auto;
 }
 .footer{
   width: 100%;
@@ -53,7 +63,6 @@ input,button {
   border-color: rgba(98,226,192,1);
   margin: 0;
 }
-
 
 
 
@@ -120,14 +129,15 @@ input,button {
 }
 
 .chat-pic{
-  height,width: 2rem;
+  height: 3rem;
+  width: 3rem;
   background: url(../imgs/pic.png);
   background-size: cover;
   background-repeat: no-repeat;
   float: left;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   border: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-color: rgba(98,226,192,1);
 }
 
@@ -152,22 +162,24 @@ input,button {
 
 
 .rectangle{
+  margin-top: 1vh;
   float: right;
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
 
-  border-left:10px solid rgba(231,233,255,1);
+  border-left:5px solid rgba(231,233,255,1);
 }
 .rectangle-robot{
+  margin-top: 1vh;
   float: left;
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
 
-  border-right:10px solid rgb(221,253,232,1);
+  border-right:5px solid rgb(221,253,232,1);
 }
 
 
@@ -305,7 +317,9 @@ p{
   }
 
 
-
+.chat-pic{
+display: none;
+}
 
 
 
@@ -318,12 +332,34 @@ p{
     min-height: 100vh;
   }
 
+  .rectangle{
+    margin-top: 1vh;
+    float: right;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
 
+    border-left:8px solid rgba(231,233,255,1);
+  }
+  .rectangle-robot{
+    margin-top: 1vh;
+    float: left;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
 
+    border-right:8px solid rgb(221,253,232,1);
+  }
 
+  .profile-pic{
+    width: 8vh;
+    height: 8vh;
 
-
-
+    border-radius: 4vh;
+    border-width: 4px;
+  }
 
 
 
@@ -344,13 +380,7 @@ p{
     font-size: 1.8em;
   }
 
-  .profile-pic{
-    width: 8vh;
-    height: 8vh;
-
-    border-radius: 4vh;
-    border-width: 8px;
-  }
+  
   #search-input{
     font-size: 3rem;
   }
