@@ -177,7 +177,7 @@ function robotAnalize(value){
       return "Hei!";
       break;
     case /nimi/.test(value):
-      return "Minu nimi on Rob";
+      return "Minu nimi on gotoAndBot";
       break;
       case /vanus|vana/.test(value):
         return "Ma olen 42 aastat vana";
@@ -238,9 +238,7 @@ var convertIt = jQuery.when(
 
     setTimeout(function(){
       addRobotItemToDOM("Konverteeritud valuuta väärtus: "+ result);
-      ///Sound effect
-      var snd = new Audio("sounds/msg.mp3");
-      snd.play();
+      
   }, 1200);
 
 
